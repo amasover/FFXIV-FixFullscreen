@@ -40,7 +40,7 @@
 #define MYFUNCTION_HASH		0x6654bba6 // hash of "MyFunction"
 
 // Simple app to inject a reflective DLL into a process vis its process ID.
-int WinMain() //int argc, char * argv[]
+int main(int argc, char * argv[])
 {
 	HANDLE hFile          = NULL;
 	HANDLE hModule        = NULL;
@@ -53,12 +53,6 @@ int WinMain() //int argc, char * argv[]
 	DWORD dwExitCode	  = 1;
 	TOKEN_PRIVILEGES priv = {0};
 
-#ifdef WIN_X64
-	char * cpDllFile = "reflective_dll.x64.dll";
-#else
-	char * cpDllFile  = "reflective_dll.dll";
-#endif
-
 	do
 	{
 		// Usage: inject.exe [string] [pid] [dll_file]
@@ -67,11 +61,11 @@ int WinMain() //int argc, char * argv[]
 		//	dwProcessId = GetCurrentProcessId();
 		//else
 		//dwProcessId = atoi( argv[2] );
-		dwProcessId = getPid("ffxiv_dx11.exe");
+		dwProcessId = getPid(argv[1]);
 
 		//if( argc >= 4 )
 		//	cpDllFile = argv[3];
-		cpDllFile = "ffxiv-fixfullscreen.dll";
+		char * cpDllFile = "ffxiv-fixfullscreen.dll";
 
 		hFile = CreateFileA( cpDllFile, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL );
 		if( hFile == INVALID_HANDLE_VALUE )
