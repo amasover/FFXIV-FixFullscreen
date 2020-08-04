@@ -1,3 +1,5 @@
+Note: as of Auguest 3, 2020, Windows Defender is detecting the executable as [Behavior:Win32/Atosev.A1sms](https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Behavior:Win32/Atosev.A!sms&threatId=-2147237347). Basically a generic "something looks fishy". I think Windows Defender doesn't like the hooking/injection method. Please review the source code if you have any concerns.
+
 About
 =====
 
