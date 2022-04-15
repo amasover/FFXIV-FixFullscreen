@@ -8,9 +8,9 @@ This program fixes FFXIV refreshing the screen resolution when switching into th
 Usage
 =====
 
-1. Extract the exe and the dll to a folder.
-2. Launch FFXIV client.
-3. Run ffxiv-fixfullscreen.exe
+1. Extract both the exe and the dll to the same folder somewhere on your computer.
+2. Launch FFXIV client (the game must be fully launched and the game executable must be called ffxiv_dx11.exe).
+3. Run ffxiv-fixfullscreen.exe. Note that you'll most likely need to run as administrator for it to work.
 
 Note: This only works with FFXIV DX11. The DX9 version of the game client doesn't seem to have this problem
 
